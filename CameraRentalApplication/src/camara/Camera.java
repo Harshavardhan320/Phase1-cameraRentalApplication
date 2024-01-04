@@ -99,6 +99,10 @@ public class Camera {
 	//printing the camera to the list
 	
 	public void ViewCameraList() {
+		if(CameraList.isEmpty()) {
+			System.out.println("No Data Present at This Moment.");
+			return;
+		}
 		//sorting 
 		Collections.sort(CameraList, Comparator.comparingInt(CameraDetails::getId));
 		System.out.println();
@@ -118,7 +122,7 @@ public class Camera {
 	}
 	
 	public void RemoveCamara(int id) {
-		if(CameraList == null) {
+		if(CameraList.isEmpty()) {
 			System.out.println("No Data Present at This Moment.");
 			return;
 		}
